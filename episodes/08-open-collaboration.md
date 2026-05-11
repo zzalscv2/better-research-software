@@ -342,7 +342,8 @@ def summary_duration_by_astronaut(df):
     subset = df.loc[:,['crew', 'duration']] # subset to work with only relevant columns
     subset = add_duration_hours(subset) # need duration_hours for easier calcs
     subset = subset.drop('duration', axis=1) # dropping the extra 'duration' column as it contains string values not suitable for calulations
-    subset = subset.groupby('crew').sum() 
+    subset = subset.groupby('crew').sum()
+    subset = subset.reset_index()
     return subset
 ```
 
@@ -545,6 +546,7 @@ def summary_duration_by_astronaut(df):
     subset = add_duration_hours(subset) # need duration_hours for easier calcs
     subset = subset.drop('duration', axis=1) # dropping the extra 'duration' column as it contains string values not suitable for calulations
     subset = subset.groupby('crew').sum() 
+    subset = subset.reset_index()
     return subset
 
 
@@ -750,7 +752,8 @@ def summary_duration_by_astronaut(df):
     subset = subset.explode('crew') # separating lists of crew into individual rows
     subset = add_duration_hours(subset) # need duration_hours for easier calcs
     subset = subset.drop('duration', axis=1) # dropping the extra 'duration' column as it contains string values not suitable for calulations
-    subset = subset.groupby('crew').sum() 
+    subset = subset.groupby('crew').sum()
+    subset = subset.reset_index()
     return subset
 ```
 
