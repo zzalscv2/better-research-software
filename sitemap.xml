@@ -40,6 +40,9 @@
     <loc>https://carpentries-incubator.github.io/better-research-software/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/aio.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/ci-for-testing.html</loc>
   </url>
   <url>
@@ -50,6 +53,9 @@
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/fair-software.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/images.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/index.html</loc>
@@ -97,6 +103,9 @@
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/ci-for-testing.html</loc>
   </url>
   <url>
@@ -109,10 +118,19 @@
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/fair-software.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/index.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/installation-instructions.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/licensing.html</loc>
@@ -125,6 +143,12 @@
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/instructor/test-suite-exercise.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/better-research-software/key-points.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/better-research-software/licensing.html</loc>
