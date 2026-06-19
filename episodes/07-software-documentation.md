@@ -20,7 +20,7 @@ After completing this episode, participants should be able to:
 - Describe the main types of software documentation (tutorials, how to guides, reference and explanation).
 - Apply a documentation framework to write effective documentation of any type. 
 - Describe the different formats available for delivering software documentation (Markdown files, wikis, static webpages).
-- Implement MkDocs to generate and manage comprehensive project documentation
+- Use MkDocs to generate and manage comprehensive project documentation
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -467,7 +467,7 @@ site_name: Spacewalks Documentation
 use_directory_urls: false
 theme:
   name: "material"
-font: false
+  font: false
 nav:
   - Spacewalks Documentation: index.md
   - Tutorials: tutorials.md
@@ -487,7 +487,7 @@ site_name: Spacewalks Documentation
 use_directory_urls: false
 theme:
   name: "material"
-font: false
+  font: false
 nav:
   - Spacewalks Documentation: index.md
   - Tutorials: tutorials.md
