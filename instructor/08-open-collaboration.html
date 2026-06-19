@@ -349,7 +349,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Software management &amp; collaboration</h1>
-        <p>Last updated on 2026-05-21 |
+        <p>Last updated on 2026-06-19 |
 
         <a href="https://github.com/carpentries-incubator/better-research-software/edit/main/episodes/08-open-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -415,7 +415,7 @@ consider which we will cover here.</p>
   Code state
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>At this point, the code in your local software project’s directory
 should be as in: <a href="https://github.com/carpentries-incubator/bbrs-software-project/tree/08-open-collaboration" class="external-link uri">https://github.com/carpentries-incubator/bbrs-software-project/tree/08-open-collaboration</a></p>
@@ -431,7 +431,7 @@ should be as in: <a href="https://github.com/carpentries-incubator/bbrs-software
   Activate your virtual environment
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>If it is not already active, make sure to activate your virtual
 environment from the root of the software project directory:</p>
@@ -540,7 +540,7 @@ meant to exist forever).</p>
   Optional challenge: archive our GitHub repository to Zenodo (5 min)
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>You can choose to do the following as an exercise or by live coding
 based on what you think the learners would prefer. You can copy the
@@ -607,7 +607,7 @@ repository and the corresponding Markdown:</p>
   Problems with GitHub and Zenodo integration
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>The integration between GitHub and Zenodo does not interact well with
 some browsers’ privacy features and extensions. Firefox can be
@@ -640,7 +640,7 @@ the software related to the DOI we are adding.</p>
   Optional challenge: add a DOI and software version to the citation file (5 min)
   </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
 <div class="accordion-body">
 <p>You can choose to do the following as an exercise or by live coding
 based on what you think the learners would prefer. You can copy the the
@@ -854,9 +854,10 @@ implement the requested feature.</p>
 <span id="cb8-12"><a href="#cb8-12" tabindex="-1" aria-label="code-block-8-12"></a>    <span class="bu">print</span>(<span class="ss">f'Calculating summary of total EVA time by astronaut'</span>)</span>
 <span id="cb8-13"><a href="#cb8-13" tabindex="-1" aria-label="code-block-8-13"></a>    subset <span class="op">=</span> df.loc[:,[<span class="st">'crew'</span>, <span class="st">'duration'</span>]] <span class="co"># subset to work with only relevant columns</span></span>
 <span id="cb8-14"><a href="#cb8-14" tabindex="-1" aria-label="code-block-8-14"></a>    subset <span class="op">=</span> add_duration_hours(subset) <span class="co"># need duration_hours for easier calcs</span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1" aria-label="code-block-8-15"></a>    subset <span class="op">=</span> subset.drop(<span class="st">'duration'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># dropping the extra 'duration' column as it contains string values not suitable for calulations</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1" aria-label="code-block-8-16"></a>    subset <span class="op">=</span> subset.groupby(<span class="st">'crew'</span>).<span class="bu">sum</span>() </span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1" aria-label="code-block-8-17"></a>    <span class="cf">return</span> subset</span></code></pre>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1" aria-label="code-block-8-15"></a>    subset <span class="op">=</span> subset.drop(<span class="st">'duration'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># dropping the extra 'duration' column as it contains string values not suitable for calculations</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1" aria-label="code-block-8-16"></a>    subset <span class="op">=</span> subset.groupby(<span class="st">'crew'</span>).<span class="bu">sum</span>()</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1" aria-label="code-block-8-17"></a>    subset <span class="op">=</span> subset.reset_index() <span class="co"># make group index a column in the dataframe</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1" aria-label="code-block-8-18"></a>    <span class="cf">return</span> subset</span></code></pre>
 </div>
 <p>Then add the following line after the <code>graph_file</code>
 variable is created:</p>
@@ -1064,26 +1065,27 @@ like:</p>
 <span id="cb12-169"><a href="#cb12-169" tabindex="-1" aria-label="code-block-12-169"></a>    <span class="bu">print</span>(<span class="ss">f'Calculating summary of total EVA time by astronaut'</span>)</span>
 <span id="cb12-170"><a href="#cb12-170" tabindex="-1" aria-label="code-block-12-170"></a>    subset <span class="op">=</span> df.loc[:,[<span class="st">'crew'</span>, <span class="st">'duration'</span>]] <span class="co"># subset to work with only relevant columns</span></span>
 <span id="cb12-171"><a href="#cb12-171" tabindex="-1" aria-label="code-block-12-171"></a>    subset <span class="op">=</span> add_duration_hours(subset) <span class="co"># need duration_hours for easier calcs</span></span>
-<span id="cb12-172"><a href="#cb12-172" tabindex="-1" aria-label="code-block-12-172"></a>    subset <span class="op">=</span> subset.drop(<span class="st">'duration'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># dropping the extra 'duration' column as it contains string values not suitable for calulations</span></span>
+<span id="cb12-172"><a href="#cb12-172" tabindex="-1" aria-label="code-block-12-172"></a>    subset <span class="op">=</span> subset.drop(<span class="st">'duration'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># dropping the extra 'duration' column as it contains string values not suitable for calculations</span></span>
 <span id="cb12-173"><a href="#cb12-173" tabindex="-1" aria-label="code-block-12-173"></a>    subset <span class="op">=</span> subset.groupby(<span class="st">'crew'</span>).<span class="bu">sum</span>() </span>
-<span id="cb12-174"><a href="#cb12-174" tabindex="-1" aria-label="code-block-12-174"></a>    <span class="cf">return</span> subset</span>
-<span id="cb12-175"><a href="#cb12-175" tabindex="-1" aria-label="code-block-12-175"></a></span>
+<span id="cb12-174"><a href="#cb12-174" tabindex="-1" aria-label="code-block-12-174"></a>    subset <span class="op">=</span> subset.reset_index() <span class="co"># make group index a column in the dataframe</span></span>
+<span id="cb12-175"><a href="#cb12-175" tabindex="-1" aria-label="code-block-12-175"></a>    <span class="cf">return</span> subset</span>
 <span id="cb12-176"><a href="#cb12-176" tabindex="-1" aria-label="code-block-12-176"></a></span>
-<span id="cb12-177"><a href="#cb12-177" tabindex="-1" aria-label="code-block-12-177"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb12-178"><a href="#cb12-178" tabindex="-1" aria-label="code-block-12-178"></a></span>
-<span id="cb12-179"><a href="#cb12-179" tabindex="-1" aria-label="code-block-12-179"></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
-<span id="cb12-180"><a href="#cb12-180" tabindex="-1" aria-label="code-block-12-180"></a>        input_file <span class="op">=</span> <span class="st">'data/eva-data.json'</span></span>
-<span id="cb12-181"><a href="#cb12-181" tabindex="-1" aria-label="code-block-12-181"></a>        output_file <span class="op">=</span> <span class="st">'results/eva-data.csv'</span></span>
-<span id="cb12-182"><a href="#cb12-182" tabindex="-1" aria-label="code-block-12-182"></a>        <span class="bu">print</span>(<span class="ss">f'Using default input and output filenames'</span>)</span>
-<span id="cb12-183"><a href="#cb12-183" tabindex="-1" aria-label="code-block-12-183"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-184"><a href="#cb12-184" tabindex="-1" aria-label="code-block-12-184"></a>        input_file <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb12-185"><a href="#cb12-185" tabindex="-1" aria-label="code-block-12-185"></a>        output_file <span class="op">=</span> sys.argv[<span class="dv">2</span>]</span>
-<span id="cb12-186"><a href="#cb12-186" tabindex="-1" aria-label="code-block-12-186"></a>        <span class="bu">print</span>(<span class="st">'Using custom input and output filenames'</span>)</span>
-<span id="cb12-187"><a href="#cb12-187" tabindex="-1" aria-label="code-block-12-187"></a></span>
-<span id="cb12-188"><a href="#cb12-188" tabindex="-1" aria-label="code-block-12-188"></a>    graph_file <span class="op">=</span> <span class="st">'results/cumulative_eva_graph.png'</span></span>
-<span id="cb12-189"><a href="#cb12-189" tabindex="-1" aria-label="code-block-12-189"></a>    duration_by_astronaut_output_file <span class="op">=</span> <span class="st">'results/duration_by_astronaut.csv'</span></span>
-<span id="cb12-190"><a href="#cb12-190" tabindex="-1" aria-label="code-block-12-190"></a></span>
-<span id="cb12-191"><a href="#cb12-191" tabindex="-1" aria-label="code-block-12-191"></a>    main(input_file, output_file, duration_by_astronaut_output_file, graph_file)</span></code></pre>
+<span id="cb12-177"><a href="#cb12-177" tabindex="-1" aria-label="code-block-12-177"></a></span>
+<span id="cb12-178"><a href="#cb12-178" tabindex="-1" aria-label="code-block-12-178"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb12-179"><a href="#cb12-179" tabindex="-1" aria-label="code-block-12-179"></a></span>
+<span id="cb12-180"><a href="#cb12-180" tabindex="-1" aria-label="code-block-12-180"></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb12-181"><a href="#cb12-181" tabindex="-1" aria-label="code-block-12-181"></a>        input_file <span class="op">=</span> <span class="st">'data/eva-data.json'</span></span>
+<span id="cb12-182"><a href="#cb12-182" tabindex="-1" aria-label="code-block-12-182"></a>        output_file <span class="op">=</span> <span class="st">'results/eva-data.csv'</span></span>
+<span id="cb12-183"><a href="#cb12-183" tabindex="-1" aria-label="code-block-12-183"></a>        <span class="bu">print</span>(<span class="ss">f'Using default input and output filenames'</span>)</span>
+<span id="cb12-184"><a href="#cb12-184" tabindex="-1" aria-label="code-block-12-184"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-185"><a href="#cb12-185" tabindex="-1" aria-label="code-block-12-185"></a>        input_file <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb12-186"><a href="#cb12-186" tabindex="-1" aria-label="code-block-12-186"></a>        output_file <span class="op">=</span> sys.argv[<span class="dv">2</span>]</span>
+<span id="cb12-187"><a href="#cb12-187" tabindex="-1" aria-label="code-block-12-187"></a>        <span class="bu">print</span>(<span class="st">'Using custom input and output filenames'</span>)</span>
+<span id="cb12-188"><a href="#cb12-188" tabindex="-1" aria-label="code-block-12-188"></a></span>
+<span id="cb12-189"><a href="#cb12-189" tabindex="-1" aria-label="code-block-12-189"></a>    graph_file <span class="op">=</span> <span class="st">'results/cumulative_eva_graph.png'</span></span>
+<span id="cb12-190"><a href="#cb12-190" tabindex="-1" aria-label="code-block-12-190"></a>    duration_by_astronaut_output_file <span class="op">=</span> <span class="st">'results/duration_by_astronaut.csv'</span></span>
+<span id="cb12-191"><a href="#cb12-191" tabindex="-1" aria-label="code-block-12-191"></a></span>
+<span id="cb12-192"><a href="#cb12-192" tabindex="-1" aria-label="code-block-12-192"></a>    main(input_file, output_file, duration_by_astronaut_output_file, graph_file)</span></code></pre>
 </div>
 <p>Now, let’s test run our script, to make sure we do not get any
 errors.</p>
@@ -1173,7 +1175,7 @@ branches.</p>
   How to pull changes from a remote branch
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>If we needed to pull changes from a branch on a remote (for example
 if we have made changes on another computer or via GitHub’s web based
@@ -1196,7 +1198,7 @@ command.</p>
   Merging branches
   </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <p>If we are working alone, when we have completed working on a branch
 (for example adding a feature or fixing a bug) then we can merge our
@@ -1342,7 +1344,7 @@ computer and in GitHub.</li>
   Updated function to copy-paste
   </h3>
 </button>
-<div id="collapseSpoiler6" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler6" aria-labelledby="headingSpoiler6">
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1362,9 +1364,10 @@ computer and in GitHub.</li>
 <span id="cb24-13"><a href="#cb24-13" tabindex="-1" aria-label="code-block-24-13"></a>    subset.crew <span class="op">=</span> subset.crew.<span class="bu">str</span>.split(<span class="st">';'</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: [i <span class="cf">for</span> i <span class="kw">in</span> x <span class="cf">if</span> i.strip()]) <span class="co"># splitting the crew into individuals and removing blank string splits from ending ;</span></span>
 <span id="cb24-14"><a href="#cb24-14" tabindex="-1" aria-label="code-block-24-14"></a>    subset <span class="op">=</span> subset.explode(<span class="st">'crew'</span>) <span class="co"># separating lists of crew into individual rows</span></span>
 <span id="cb24-15"><a href="#cb24-15" tabindex="-1" aria-label="code-block-24-15"></a>    subset <span class="op">=</span> add_duration_hours(subset) <span class="co"># need duration_hours for easier calcs</span></span>
-<span id="cb24-16"><a href="#cb24-16" tabindex="-1" aria-label="code-block-24-16"></a>    subset <span class="op">=</span> subset.drop(<span class="st">'duration'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># dropping the extra 'duration' column as it contains string values not suitable for calulations</span></span>
-<span id="cb24-17"><a href="#cb24-17" tabindex="-1" aria-label="code-block-24-17"></a>    subset <span class="op">=</span> subset.groupby(<span class="st">'crew'</span>).<span class="bu">sum</span>() </span>
-<span id="cb24-18"><a href="#cb24-18" tabindex="-1" aria-label="code-block-24-18"></a>    <span class="cf">return</span> subset</span></code></pre>
+<span id="cb24-16"><a href="#cb24-16" tabindex="-1" aria-label="code-block-24-16"></a>    subset <span class="op">=</span> subset.drop(<span class="st">'duration'</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># dropping the extra 'duration' column as it contains string values not suitable for calculations</span></span>
+<span id="cb24-17"><a href="#cb24-17" tabindex="-1" aria-label="code-block-24-17"></a>    subset <span class="op">=</span> subset.groupby(<span class="st">'crew'</span>).<span class="bu">sum</span>()</span>
+<span id="cb24-18"><a href="#cb24-18" tabindex="-1" aria-label="code-block-24-18"></a>    subset <span class="op">=</span> subset.reset_index() <span class="co"># make group index a column in the dataframe</span></span>
+<span id="cb24-19"><a href="#cb24-19" tabindex="-1" aria-label="code-block-24-19"></a>    <span class="cf">return</span> subset</span></code></pre>
 </div>
 </div>
 </div>
@@ -1404,7 +1407,7 @@ community-driven development.</p>
   Code state
   </h3>
 </button>
-<div id="collapseSpoiler7" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler7" aria-labelledby="headingSpoiler7">
+<div id="collapseSpoiler7" class="accordion-collapse collapse" aria-labelledby="headingSpoiler7" data-bs-parent="#accordionSpoiler7">
 <div class="accordion-body">
 <p>At this point, the code in your local software project’s directory
 should be as in: <a href="https://github.com/carpentries-incubator/bbrs-software-project/tree/final" class="external-link uri">https://github.com/carpentries-incubator/bbrs-software-project/tree/final</a></p>
@@ -1524,8 +1527,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/better-research-software/instructor/08-open-collaboration.html",
   "identifier": "https://carpentries-incubator.github.io/better-research-software/instructor/08-open-collaboration.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2026-05-21",
-  "datePublished": "2026-06-16"
+  "dateModified": "2026-06-19",
+  "datePublished": "2026-06-19"
 }
 
   </script><script>
